@@ -1,0 +1,244 @@
+.addui-Tabs .addui-Tabs-tabHolder {
+  display: flex;
+  font-size: 18px;
+}
+
+.addui-Tabs .addui-Tabs-tabHolder .addui-Tabs-tab {
+  flex: 1;
+  border-bottom: 1px solid #dcd8e4;
+  text-align: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #dcd8e4;
+  margin: 0 10px;
+}
+
+.addui-Tabs .addui-Tabs-tabHolder .addui-Tabs-tab.addui-Tabs-active {
+	padding-bottom: 5px;
+	border-bottom: 3px solid #ff0000;
+	color: #ff0000;
+}
+
+.addui-Tabs .addui-Tabs-content {
+  display: none;
+}
+
+.addui-Tabs .addui-Tabs-content.addui-Tabs-active {
+  display: block;
+}
+
+.leaderboard_panel {
+  /* position: absolute;*/
+    display: block;
+    color: #fff;
+    width: 100%;
+    height: 120vh;
+}
+.leaderboard_detail {
+    display: table;
+    width: 100%;
+    background: #0c3559;
+	color:#dcd8e4;
+	text-align:left;
+	border-radius:5px;
+    margin-bottom: 5px;
+	padding:0px 5px;
+	
+}
+.leaderboard_detail.active{
+	background: #146d97;
+	color:#fff;
+}
+.leaderboard_detail_heading {
+    display: table;
+    width: 100%;
+    background: transparent;
+	color:#bab8b8;
+	text-align:left;
+	font-size:12px;
+    margin: 10px 0px 2px 0px;
+	font-weight:bold;
+	padding:0px 5px 0px 0px;
+}
+.col_user_icon {
+	padding: 3px 0px;
+	display: table-cell;
+}
+.col_user_icon .user_icon{
+	border-radius: 50%;
+    width: 40px;
+	 height: 40px;
+	text-align:center;
+	margin-left:12px;
+}
+.col1{width:30%;}
+.col2{width:45%;font-size: 12px}
+.col3{width:25%;}
+
+
+.col_user_icon .serial_no{
+ float:left;
+ width:25px;
+ margin-top:9px;
+ text-align: center;}
+
+.tabs {
+	position: relative;   
+	height:auto;
+	clear: both;
+	background: transparent;
+}
+.tab {
+  float: left;
+   
+}
+.tab label {
+	background: transparent;
+	padding: 6px; 
+	border:1px solid #cdc0e7;
+	color:#dcd8e4;
+	position: relative;
+	width: 120px;
+	text-align:center;
+	/*-webkit-transition: background-color .17s linear;*/
+	vertical-align: middle;
+ 
+}
+.tab [type=radio] {
+  display: none; 
+
+}
+.content {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	background: transparent;
+	right: 0;
+	/*bottom: 0;*/
+	 text-align: left;
+	opacity: 0;
+	 height: 120vh;
+}
+[type=radio]:checked ~ label {
+ background: #c3c1c1;
+    border-bottom: 1px solid #c3c1c1;
+  z-index: 2;
+  color:#081663;
+  font-weight: 600;
+}
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
+  opacity: 1;
+}
+
+.tab-one{border-top-left-radius: 25px;border-bottom-left-radius: 25px;}
+
+.tab-three{border-bottom-right-radius: 25px;border-top-right-radius: 25px;}
+
+
+.tab-series{margin-left: 16%}
+.tab .tab-two {
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.tab .tab-one {
+    border-right: 0px;
+ 
+}
+.tab .tab-three {
+    
+    border-left: 0px;
+}
+ .badge-of-honour{ position: absolute;
+    top: 490%;
+    background:rgba(255,255,255, 0.3);
+    text-align: center;
+    width: 100%; 
+	padding:10px 0px 20px}
+ 
+  .badge-of-honour img{ width:300px}
+@media (max-width:320px){
+.col_user_icon .user_icon{
+	border-radius: 50%;
+    width: 35px;
+	height:35px;
+	margin-left:8px;
+}
+
+.tab-series {
+    margin-left: 6%;
+}
+.winner-user{width:55px; height:55px;}
+ .rank1{ position:absolute;top: 25%;
+    right: 16% !important;  width:34px; height:46px;}
+.rank2{ position:absolute; right:-8% !important; top:25%; width:34px; height:39px;}
+
+
+
+}
+@media (min-width:767px){
+.tab-series {
+    margin-left: 32%;
+}
+.rank1{ position:absolute;top: 25%;
+    right:55% !important}
+.rank2{ position:absolute; right:20% !important; top:25%}
+.winner-name1 {
+    width: 35% !important;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+}
+@media (min-width:600px) and (max-width:640px){
+.tab-series {
+    margin-left: 25%;
+}
+.rank1{ position:absolute;top: 25%;
+    right:37% !important;}
+.rank2{ position:absolute; right:9% !important; top:25%}
+.winner-name1 {
+    width: 45% !important;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+}
+@media (min-width:360px) and (max-width:400px) {
+.tab-series {
+    margin-left: 13%;
+}
+.rank1{ position:absolute;top: 25%;
+    right:1% !important}
+.rank2{ position:absolute; right:-11% !important; top:25%}
+
+}
+
+@media (min-width:401px) and (max-width:500px) {
+.tab-series {
+    margin-left: 15% !important;
+}
+.rank1{ position:absolute;top: 25% !important;
+    right:15% !important;}
+.rank2{ position:absolute; right:-5% !important; top:25% !important;}
+
+}
+
+.main-header1 {
+    color: #fff;
+    line-height: 1.1;
+    background-color: #040436;
+}
+.rupees-symbol{margin-right:7px;}
+
+.rank1{ position:absolute;top: 25%;right:6%;}
+.rank2{ position:absolute; right:-10%; top:25%;}
+
+
+.winner-icon{width:100%; position: relative;text-align:left;
+}
+.winner-icon1{width:100%; position: relative;text-align:center;
+}
+.winner-name{ text-align:center; margin-top:15px; margin-bottom:10px;}
+.winner-name1{ width:65%; text-align:center; margin-top:15px; margin-bottom:10px;}
