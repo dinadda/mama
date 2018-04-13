@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Jio Cricket Play Along - Home page</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/master.css">
+	<link type="text/css" rel="stylesheet"  href="assets/css/intro.css"  media="screen,projection"/>	
+	<link rel="stylesheet" href="assets/css/homepage.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/menu_elastic1.css" />
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/css/aos.css" />
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style>
+.slick-next {
+    background: url(assets/images/prizes/right-arrow.png)  no-repeat;
+    background-size: 55%;
+	background-position: center;
+}
+.slick-prev {
+    background: url(assets/images/prizes/left-arrow.png) no-repeat;
+    background-size: 55%;
+	background-position: center;
+}
+.slick-slide img.price-banner{margin-top: 1.5rem}	
+.slider-thumb .prize-img{width:100%; height:100%; max-width:90px; max-height:90px; /*border-radius:50%; -moz-border-radius:50%; -webkit-border-radius:50%; border: solid 2px #fff;*/ margin:auto; }
+.slick-slider.slider-nav{margin:0px;}
+.slick-slider.slider-nav .slick-slide{margin:0rem; padding:0.5rem 0rem; width:33.33%;}
+.slick-slider.slider-nav .slick-slide .txt{ font-size:0.7rem; padding-top:0.3rem;}
+.slick-slider.slider-nav .slick-active{background-color:#0453c0; padding:0.7rem 0rem;}
+.slick-slider.slider-nav .slick-current{background-color:#468ecb; position:relative;}
+.slick-slider.slider-nav .slick-current::after{
+	content:" "; 
+	position: absolute; 
+	top: -7px;
+	left:50%;
+	margin-left:-7px;
+    width: 14px;
+    height: 8px;
+	background:url(assets/images/prizes/active-point.png) no-repeat;
+	z-index:999;
+}
+.slick-arrow{opacity: 1; display: block !important; position: absolute; top: -30vh;}
+.slider{height: calc(100vh - 200px);}
+
+header h1 {font-family: 'Rockwell'; position: absolute; top: 22%; left: 0; text-align: center; width: 100%; pointer-events: none;}
+.admin-details {margin: 1.2rem 0.5rem 2rem 0.5rem;}
+.header-user { display: none;}
+.rocket-icon {position: absolute;top: 15px; right: 15px; width: 20px;  display: none}
+.history_panel { padding: 0px 0px 0px 0px}
+.history_panel h2 {margin-bottom: 0rem; font-weight: normal; color: #f8b32e; font-size: 1.4rem; margin-top: 1rem;}
+.history_panel p {color:#bfdef7;}	
+.how-to-play-section { text-align: center; background: url(assets/images/third/top-brd.png)no-repeat; background-color: transparent; background-position: top; }
+.how-to-play-section:first-child { background: none;}	
+.slick-slide { text-align: center;}
+.slider2-1, .slider2 { float: left; margin-top: 1.5rem;}
+.slider2 .slick-slide { margin: 0;}
+.slider2.slick-slider { margin: 0; margin-top: 1.5rem;}
+.slider2-1 img, .slider2 img { width: 100%;}
+.slider2-1 {width: 33.33%}
+.slider2 { width: 66.66%; overflow: hidden;}
+.slider2 .slick-active {opacity:1;}
+.slick-initialized .slick-slide { background: none;}
+.section-no-bg { background: none;}
+.section-whitebg { background: #fff; padding: 0.5rem 0 0.1rem 0; margin-bottom: 0rem;}
+.section-whitebg h2 {color:#14234a;}
+.slick-slider {margin: 1.5rem 0 0rem 0;}
+.share-popup-cont { padding: 20px 10px; border-bottom: 20px solid #fff;}
+.share-popup-cont img {max-width: 250px; margin: 0px auto; padding-bottom: 10px;}
+.active .share-popup-cont {bottom: 4%; height: 90vh;  color: #14234a;}
+.cont-wrap{overflow: scroll; height: 100vh; padding-bottom: 100px;}
+.close-btn, .close-btn1 {border-radius: 100%; text-align: center; margin: 10px; width: 30px; height: 30px; position: absolute; right: 0; background: #36338e url(assets/images/contact-close-icon.png)no-repeat; background-size: 50% 50%; background-position: 50%; top: 0; z-index: 99; right: 0; opacity: 0;	-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -webkit-box-shadow: 0px 0px 81px 13px rgba(255,255,255,1); -moz-box-shadow: 0px 0px 81px 13px rgba(255,255,255,1); box-shadow: 0px 0px 81px 13px rgba(255,255,255,1);}
+.active .close-btn, .active .close-btn1 { opacity: 1;}	
+.slick-slide { outline: none;}	
+#list li, ul#list { list-style-type: none; margin: 0; padding: 0;}  
+#list li { display: none;}
+#list li.selected { display: block;}
+#next { position: absolute; right: 0; top:188px; background-image: url(assets/images/next-arrow.png);}
+#prev { position: absolute; left: 0; top: 188px; background-image: url(assets/images/arrow.png);}
+@media (max-width: 360px){
+	.slick-slide img.price-banner{margin-top: 0rem}
+}
+</style>	
+</head>
+<body class="main_bg_two">	  
+	<div class="main_container" style="height:auto !important;">
+<header class="header main-header">
+
+<div class="row space-header">
+<div class="rocket-icon"><img src="assets/images/dashboard/share-icon.png"></div>
+<div class="col-1 space-arrow"><a href="homepage.html"><img src="assets/images/back-arrow.png"></a></div>
+<div class="col-6 space-team-name text-left">
+	<div class="team-header-name ">
+	<h5>Prizes</h5>
+	</div>
+</div>
+<div class="col-5 space-icon">
+
+	
+</div>
+</div>
+
+
+<div class="clear"></div>
+</header>
+<div class="clear"></div>
+<section class="history_panel">
+<div class="how-to-play-section">
+  <section class="center slider" >
+    <div>
+		<img src="assets/images/prizes/prize-lodha.png" class="price-banner">
+    </div>
+    <div>
+		<img src="assets/images/prizes/prize-car.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-holiday.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-lodha.png" class="price-banner">
+    </div>
+    <div>
+		<img src="assets/images/prizes/prize-car.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-holiday.png" class="price-banner">
+    </div>
+    <div>
+		<img src="assets/images/prizes/prize-lodha.png" class="price-banner">
+    </div>
+    <div>
+		<img src="assets/images/prizes/prize-car.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-holiday.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-lodha.png" class="price-banner">
+    </div>
+    <div>
+		<img src="assets/images/prizes/prize-car.png" class="price-banner">
+    </div>
+	<div>
+		<img src="assets/images/prizes/prize-holiday.png" class="price-banner">
+    </div>
+	
+  </section>
+  <!--<thumbnail>-->
+	<div class="slider-thumb slider-nav">
+		<div><div><img src="assets/images/prizes/thumb-lodha.png" class="prize-img"></div><div class="txt">PRIMIUM HOUSE</div></div>
+		<div><div><img src="assets/images/prizes/thumb-car.png" class="prize-img"></div><div class="txt">KWID Car</div></div>
+		<div><div><img src="assets/images/prizes/thumb-holiday.png" class="prize-img"></div><div class="txt">HOLIDAYS</div></div>
+		<div><div><img src="assets/images/prizes/thumb-lodha.png" class="prize-img"></div><div class="txt">PRIMIUM HOUSE</div></div>
+		<div><div><img src="assets/images/prizes/thumb-car.png" class="prize-img"></div><div class="txt">KWID Car</div></div>
+		<div><div><img src="assets/images/prizes/thumb-holiday.png" class="prize-img"></div><div class="txt">HOLIDAYS</div></div>
+		<div><div><img src="assets/images/prizes/thumb-lodha.png" class="prize-img"></div><div class="txt">PRIMIUM HOUSE</div></div>
+		<div><div><img src="assets/images/prizes/thumb-car.png" class="prize-img"></div><div class="txt">KWID Car</div></div>
+		<div><div><img src="assets/images/prizes/thumb-holiday.png" class="prize-img"></div><div class="txt">HOLIDAYS</div></div>
+	</div>
+  <!--<thumbnail end>-->
+</div>
+
+
+		
+	
+<div class="clear"></div>
+
+</section>
+
+</div>
+
+
+
+	
+		
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/slick.js"></script>
+
+	
+	
+	<script>
+	
+	AOS.init({
+	duration: 600,
+	
+	});
+	
+$('.slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  infinite: false,
+  arrows: false,
+  initialSlide: 0,
+  centerMode: true,
+  centerPadding: '4%',
+  asNavFor: '.slider-nav'
+});	
+/* thumb */
+$('.slider-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.slider',
+  dots: false,
+  centerMode: false,
+  infinite: false,
+  focusOnSelect: true
+});
+
+
+
+
+
+
+
+		
+
+	
+
+	
+	
+	
+
+	</script>
+</body>
+</html>
