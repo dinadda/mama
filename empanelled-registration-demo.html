@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <title>Empanelled</title>
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-select.min.css" rel="stylesheet">	
+	
+    <link rel="stylesheet" href="assets/css/gijgo.min.css">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+  </head>
+  <body>
+	
+		<div class="my_app_container">
+		
+			<div class="row">
+			<div class="header_panel">
+				<div class="header_panel_inner">
+					<span class="arrow_left" onclick="location.href=('customer-rating.html')"><img src="assets/images/arrow-left.png"></span>
+					<h2>Empanelled Certified Technician</h2>
+					<!-- <span class="notif_right"><img src="assets/images/notification.png"></span>	 -->				
+					
+				</div>
+			</div>
+				
+			</div>
+			<div class="row space_top">
+			
+			</div>
+				
+			
+
+
+			<div class="row ">
+				<div class="col-xs-12 no-space">
+					<!--<html for page>-->
+					<div class="inner_info">
+					
+						<div class="copy_panel"><p>Please enter your details to complete registration.</p></div>
+
+					</div>
+					
+					<!--<html for page end>-->
+				</div>
+			</div>	
+		
+			<section class="form_container">
+			<div class="row  fttx-form-app">
+			<div class="col-xs-12 select_option">
+				<div class="label_select">Registration for<span class="red_star">*</span></div>
+					<select class="selectpicker">					 
+					  <option style="display:none">Select</option>
+					  <option>Registration</option>
+					</select>			
+				</div>	
+				
+				
+				
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>First Name<span class="red_star">*</span></label>
+					</div>				
+				</div>
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>Last Name<span class="red_star">*</span></label>
+					</div>				
+				</div>
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>Mobile No 1<span class="red_star">*</span></label>
+					</div>				
+				</div>
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>Mobile No 2<span class="red_star">*</span></label>
+					</div>				
+				</div>
+				
+				<div id="room_fileds">
+<div>
+				
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>Email Id<span class="red_star">*</span></label>
+					</div>
+				<!-- <span class="error_msg">Error message text</span> -->
+				</div>
+				<div class="col-xs-12 form_panel">
+				
+					<div class="group">      
+					  <div class="label_select">Date of Birth<span class="red_star">*</span></div>
+					<input id="datepicker" required placeholder="Select" /> 
+					  
+											  
+					</div>			
+				</div>	
+				
+				<div class="col-xs-12 form_panel">
+				
+					<div class="group">      
+					  <div class="label_select">Date of Birth<span class="red_star">*</span></div>
+					<input id="datepicker" required placeholder="Select" /> 
+					  
+											  
+					</div>			
+				</div>	
+				
+
+
+</div>
+</div>
+				
+				<a  id="more_fields" onclick="add_fields();" >Add More</a>
+				
+				
+				<div class="col-xs-12 form_panel"> 
+					<div class="group">      
+					  <input type="text" required>     
+					  <span class="bar"></span>
+					  <label>Pan Card Number<span class="red_star">*</span></label>
+					  <div class="cust_upload re-txt"><input type="file">Attach file</div>
+					   
+					</div>
+				<span class="error_msg">Error message text</span> 
+				</div>
+				
+
+  
+				
+				<div class="col-xs-12 select_option">
+					<div class="label_select">Gender<span class="red_star">*</span></div>
+					<select class="selectpicker">
+					  <option style="display:none;">Select</option>
+					  <option>Male</option>
+					  <option>Female</option>
+					</select>			
+				</div>	
+			</div>
+			</section>
+   
+   
+   
+
+						
+		<div class="fix_btn">
+			<button class="btn_fix" onclick="location.href=('empanelled-registration-2.html')">Next</button>		
+		</div>
+	</div>
+	
+<script src="assets/js/jquery.min.js"></script>	
+<script src="assets/js/bootstrap.min.js"></script>	
+<script src="assets/js/bootstrap-select.min.js"></script>
+
+ <script src="assets/js/gijgo.min.js"></script>
+  <script src="assets/js/main.js"></script>
+<script>
+    $('#datepicker').datepicker({header:true, footer: true, modal: true });
+
+
+
+var room = 1;
+function add_fields() {
+    room++;
+    var objTo = document.getElementById('room_fileds')
+    var divtest = document.createElement("div");
+    divtest.innerHTML = '<div class="col-xs-12 form_panel"><div class="group"><input type="text" required><label>Email Id<span class="red_star">*</span></label></div></div><div class="col-xs-12 form_panel"><div class="group"><div class="label_select">Date of Birth<span class="red_star">*</span></div><input id="datepicker" required placeholder="Select" /></div></div>';
+    
+    objTo.appendChild(divtest)
+}
+    	
+</script>	
+</body>
+</html>
