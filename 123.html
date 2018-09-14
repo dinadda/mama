@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+        a {
+            text-decoration: none;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+           display: none !important;
+           opacity: 0.01 !important;
+       }
+       /* If the above doesn't work, add a .g-img class to any image in question. */
+       img.g-img + div {
+           display: none !important;
+       }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+        /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+            .email-container {
+                min-width: 320px !important;
+            }
+        }
+        /* iPhone 6, 6S, 7, 8, and X */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+        /* iPhone 6+, 7+, and 8+ */
+        @media only screen and (min-device-width: 414px) {
+            .email-container {
+                min-width: 414px !important;
+            }
+        }
+
+    </style>
+    <!-- CSS Reset : END -->
+	<!-- Reset list spacing because Outlook ignores much of our inline CSS. -->
+	<!--[if mso]>
+	<style type="text/css">
+		ul,
+		ol {
+			margin: 0 !important;
+		}
+		li {
+			margin-left: 30px !important;
+		}
+		li.list-item-first {
+			margin-top: 0 !important;
+		}
+		li.list-item-last {
+			margin-bottom: 10px !important;
+		}
+	</style>
+	<![endif]-->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+	    .button-td-primary:hover,
+	    .button-a-primary:hover {
+	        background: #4c4a4b !important;
+	        border-color: #4c4a4b !important;
+	    }
+		.g-img { height: auto !imaportant;}
+
+        /* Media Queries */
+        @media screen and (max-width: 700px) {
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
+
+    </style>
+    <!-- Progressive Enhancements : END -->
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #ffffff;">
+	<center style="width: 100%; background-color: #ffffff;">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+    <td>
+    <![endif]-->
+
+     
+
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="700" style="margin: 0 auto;" class="email-container">
+
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <img src="https://raw.githubusercontent.com/dinadda/mama/master/PMS_August_2018.jpg" width="700" height="256" alt="alt_text" border="0" style="width: 100%; max-width: 700px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #4c4a4b; margin: auto;" class="g-img">
+                </td>
+            </tr>
+            <!-- Hero Image, Flush : END -->
+
+            <!-- 1 Column Text + Button : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td style="padding: 20px 30px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #4c4a4b; text-align: justify;">
+                                <p style="margin: 0 0 15px;">Dear Clients,</p>
+                                <p style="margin: 0 0 15px;">The month of August ended on a good note, with better than expected GDP growth. The Indian economy expanded 8.2% during Q1FY19 as against the expectation of 7.5%, maintaining stance of fastest growing economy in the world. Agriculture at 5.3% and Manufacturing growth at 13.5% boosted the overall growth numbers. Coming to the equity markets, in the month gone by, while the benchmark index continues to scale new highs, the midcap index also continued its recovery path withboth Nifty and Nifty Midcap 100 reporting gains of 2.9% and 5.5% respectively.</p>
+								
+								<p style="margin: 0 0 15px;">Earlier in the beginning of the month, the central bank RBI in its monitory policy announced increase in Repo Rate by 25bps to 6.5% sighting inflationary pressures due to crude and progressive impact of higher than average increase in Minimum Support Prices (MSP) for the agricultural commodities. The move is likely to increase interest cost for all the corporate and retail borrowers.</p>
+								
+								<p style="margin: 0 0 15px;">Further, as it began, earnings season ended on a strong note. An analysis of the Q1FY19 results indicated earnings recovery, which we were expecting in the current and next financial year, is on track with results largely been in-line or better-than market expectations. As per business newspaper MINT; analysis of 1,462 listed companies (excluding financial services companies)showed that aggregate adjusted net profits rose 22% in Q1FY19. According to the report, corresponding figure for the same set of companies was 15% in the March quarter, and a meagre 0.01% in the Q1FY18. A part of it can be attributed to a rebound from the lows base of the GST implementation. Thus, the numbers going ahead need to be closely monitored as it will also cover the full impact of depreciated rupee and costlier raw material due to increase in crude prices for select companies. As on date, Brent crude prices are up 52% on YoY basis whereas rupee has weakened 11% during the same period.</p>
+								
+								<p style="margin: 0 0 15px;">Kerala witnessed heavy rains and floods recently. While there are mix views on the impact of floods, media reports are suggesting signs of recovery with increasing sales in other regions. However, it is expected that several Kerala based financiers would be negatively impacted as floods would have reduced the local borrower's repaying capacity.</p>
+								
+								<p style="margin: 0 0 15px;">Indian currency INR continues to depreciate against US Dollar. However, if one compares currencies of many other emerging markets including Brazil, Russia and Indonesia, INR is performing better. The currency shows weakness in the near term. However, over long run it should move in line with the fundamentals and macros of the nation. One should note that the fall in INR is not all due to worsening of domestic macro but rather USD strength. With gradual US Fed hike mostly priced in after FOMC chairman's statement that he does not foresee US economy overheating, USD strength should stabilize.</p>
+								
+								<p style="margin: 0 0 15px;">
+								<strong style="color:#149ad4; text-align: left; font-weight:bolder;font-size:16px">Portfolio update &amp; Outlook:</strong><br />
+								As we move ahead, impact of crude, currency, increasing current account deficit and uncertainty about the next year elections will keep markets volatile. However, the consumption trends are looking promising with the expected pick up in rural demand due to higher MSPs for Kharif crops. A normal rainfall and government's continued focus on implementing large reforms should further support the markets. To highlight, we expect governments' revenues to significantly go up with Black-money crack down, auction of natural resources and GST while its expenses will come down at the same time with Insolvency laws and implementation of Direct Benefit transfer. Thus the revenue surplus can significantly improve government's ability to invest in infrastructure, defence, railway and core areas.</p>
+								
+								<p style="margin: 0 0 15px;">We consider that this is a period of consolidation and next few quarters in the run up to elections, markets would trend north while remaining volatile. We have used opportunities to invest the cash proceeds and would continue to do the same at lower levels. We believe that a multi-cap strategy which has a mix of large, mid and small caps should do well in current scenario and outperform benchmarks over long term.</p>
+								
+								
+<p style="margin: 0 0 40px;">With kind regards,<br />
+Portfolio Manager</p>
+
+<p style="margin: 0 0 10px;">Source of information: Media reports, Bloomberg, Broker research report, RBI Press Releases</p>
+
+                            </td>
+                        </tr>
+						
+						<tr>
+                    <td style="padding: 20px 30px; font-family: sans-serif; font-size: 12px; line-height: 15px; text-align: left; color: #888888;">
+                        
+		             SEBI reg. No. INP000002353 | website: <a href="http://www.reliancewealth.in" target="_blank">www.reliancewealth.in</a><br />
+Investment in securities market are subject to market risks, read all the related documents carefully before investing.<br />
+Regd Off: 7th Floor, B- Wing, Trade World,  Kamla Mills Compound, S.B. Marg, Lower Parel,  Mumbai - 400013. 
+
+                    </td>
+                </tr>
+                     
+
+                    </table>
+                </td>
+            </tr>
+            <!-- 1 Column Text + Button : END -->
+
+	    </table>
+	    <!-- Email Body : END -->
+
+    <!--[if mso | IE]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+    </center>
+</body>
+</html>
